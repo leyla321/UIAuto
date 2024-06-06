@@ -18,7 +18,7 @@ public class Waiters {
         try {
             (new WebDriverWait(driver, Duration.ofSeconds(5L))).until(condition);
             return true;
-        } catch (TimeoutException var3) {
+        } catch (TimeoutException e) {
             return false;
         }
     }

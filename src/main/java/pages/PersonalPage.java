@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.ScrollUtils;
 
 public class PersonalPage extends AbsBasePage {
 
@@ -104,7 +103,7 @@ public class PersonalPage extends AbsBasePage {
             clearAndType(blogName, "BlogNameTest");
             clearAndType(dateOfBirth, "03.05.1989");
 
-            ScrollUtils.scrollBy(driver, 0, 300);
+            actions.moveToElement(countryDropdown);
 
             clickElement(countryDropdown);
             clickElement(selectCountry);
@@ -115,27 +114,26 @@ public class PersonalPage extends AbsBasePage {
             clickElement(selectCity);
             clickElement(englishLevel);
 
-
-            ScrollUtils.scrollBy(driver, 0, 300);
+            actions.moveToElement(selectEngLevel);
 
             clickElement(selectEngLevel);
             clickElement(readyToLocate);
 
-            ScrollUtils.scrollBy(driver, 0, 250);
+            actions.moveToElement(workFormatCheckbox);
 
             clickElement(workFormatCheckbox);
             clearAndType(additionalNumber, "1234567890");
 
-            ScrollUtils.scrollBy(driver, 0, 300);
+            actions.moveToElement(gender);
 
             clickElement(gender);
             clearAndType(company, "somewhere");
 
-            ScrollUtils.scrollBy(driver, 0, 300);
+            actions.moveToElement(work);
 
             clearAndType(work, "QA");
 
-            ScrollUtils.scrollBy(driver, 0, 300);
+            actions.moveToElement(saveAndContinue);
 
             clickElement(saveAndContinue);
             waitForElementToBeClickable(By.name("continue"));

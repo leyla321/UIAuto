@@ -7,6 +7,8 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.PersonalPage;
 
+import java.net.MalformedURLException;
+
 public class MainPageTest {
     private WebDriver driver = null;
 
@@ -14,7 +16,7 @@ public class MainPageTest {
     }
 
     @BeforeEach
-    public void init() throws DriverNotSupportedException {
+    public void init() throws DriverNotSupportedException, MalformedURLException {
         driver = (new WebDriverFactory()).create();
     }
 

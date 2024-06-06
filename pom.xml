@@ -19,6 +19,7 @@
         <log4j.version>2.20.0</log4j.version>
         <assertj.version>3.25.3</assertj.version>
         <faker.version>1.0.2</faker.version>
+        <selenide.version>5.2.8</selenide.version>
 
         <surefire.version>3.2.5</surefire.version>
         <compiler.version>3.13.0</compiler.version>
@@ -72,6 +73,12 @@
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>${faker.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
 
     </dependencies>

@@ -2,7 +2,8 @@ package data;
 
 public enum BrowserNameData {
     CHROME,
-    FIREFOX;
+    FIREFOX,
+    REMOTE;
     private BrowserNameData() {
     }
 }
