@@ -137,6 +137,7 @@ public class PersonalPage extends AbsBasePage {
 
             clickElement(saveAndContinue);
             waitForElementToBeClickable(By.name("continue"));
+
         } catch (Exception e) {
             e.printStackTrace();
         }

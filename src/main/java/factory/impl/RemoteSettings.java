@@ -13,7 +13,6 @@ public class RemoteSettings implements IBrowserSettings{
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setCapability(CapabilityType.BROWSER_NAME, "chrome");
         chromeOptions.setCapability(CapabilityType.BROWSER_VERSION, "124.0");
-        //chromeOptions.setCapability("enableVNC", true);
 
         Map<String, Object> selenoidOptions = new HashMap<>();
         selenoidOptions.put("enableVNC", true);

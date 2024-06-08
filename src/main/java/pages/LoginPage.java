@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,8 +36,25 @@ public class LoginPage extends AbsBasePage {
     @FindBy(xpath = "//a[contains(text(),'Личный кабинет')]")
     public WebElement personalCabinet;
 
+    @FindBy(css = ".sc-199a3eq-0.fJMWHf")
+    public WebElement userProfileName;
+
 
     public LoginPage loginAndGoToPersonalCabinet() {
+        clickElement(signInButton);
+        waitForElementToBeClickable(By.xpath("//div[./input[@name='email']]"));
+        clickElement(emailField);
+        email.sendKeys(password);
+
+        clickElement(passwordForClicking);
+        passwordForTyping.sendKeys(password);
+        clickElement(signInButton2);
+        waitForElementToBeClickable(By.cssSelector(".sc-199a3eq-0.fJMWHf"));
+        waitForElementToBeClickable(By.xpath("//a[contains(text(),'Личный кабинет')]"));
+        return new LoginPage(driver);
+    }
+
+    public LoginPage verifyUpdatedData() {
         clickElement(signInButton);
         waitForElementToBeClickable(By.xpath("//div[./input[@name='email']]"));
         clickElement(emailField);
@@ -46,7 +64,8 @@ public class LoginPage extends AbsBasePage {
         passwordForTyping.sendKeys(password);
         clickElement(signInButton2);
         waitForElementToBeClickable(By.cssSelector(".sc-199a3eq-0.fJMWHf"));
-        waitForElementToBeClickable(By.xpath("//a[contains(text(),'Личный кабинет')]"));
-        return new LoginPage(driver);
+        String expectedResult = "TestName";
+        Assertions.assertEquals(expectedResult, userProfileName.getText());
+        return this;
     }
 }

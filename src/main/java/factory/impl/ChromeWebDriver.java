@@ -3,8 +3,6 @@ package factory.impl;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.AbstractDriverOptions;
 public class ChromeWebDriver implements IBrowserSettings {
-    public ChromeWebDriver() {
-    }
 
     public AbstractDriverOptions settings() {
         ChromeOptions chromeOptions = new ChromeOptions();

@@ -20,9 +20,6 @@ public class WebDriverFactory implements IDriverFactory {
     private String browserName = System.getProperty("browser.name", "chrome");
     private String remoteGridUrl = System.getProperty("remote.url", "https://193.104.57.173/wd/hub");
 
-    public WebDriverFactory() {
-    }
-
     public WebDriver create() throws DriverNotSupportedException, MalformedURLException {
         BrowserNameData browserNameData = BrowserNameData.valueOf(browserName.toUpperCase(Locale.ROOT));
         switch (browserNameData) {
