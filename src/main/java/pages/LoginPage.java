@@ -44,7 +44,7 @@ public class LoginPage extends AbsBasePage {
         clickElement(signInButton);
         waitForElementToBeClickable(By.xpath("//div[./input[@name='email']]"));
         clickElement(emailField);
-        email.sendKeys(password);
+        email.sendKeys(username);
 
         clickElement(passwordForClicking);
         passwordForTyping.sendKeys(password);
